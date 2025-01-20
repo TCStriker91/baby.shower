@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Shower</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- MODAL (Aviso) -->
+  <div class="modal" id="info-modal">
+    <div class="modal-content">
+      <button class="close-btn" id="close-modal">X</button>
+
+      <!-- Contenido del aviso -->
+      <h2>Bienvenido a mi Baby Shower</h2>
+      <img src="https://static.vecteezy.com/system/resources/previews/019/837/247/non_2x/baby-girl-sleeping-cartoon-character-png.png" alt="Bebé" class="bebe-image" />
+      <p>Aquí encontrarás los regalos recomendados para la fiesta de baby shower.</p>
+      <p class="fiesta-info">
+        <strong>Información de la Fiesta:</strong><br/>
+        - Fecha: 12 de Octubre<br/>
+        - Lugar: Salón de fiestas<br/>
+        - Hora: 4:00 p.m.<br/>
+        ¡Te esperamos!
+      </p>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <h1 class="main-title">Baby Shower</h1>
+
+    <!-- HEADER / BARRA SUPERIOR -->
+    <header class="top-bar">
+      <div class="top-bar-left">
+        <!-- Ícono de menú (hamburguesa) -->
+        <button class="menu-btn">
+          <img src="img/menu.png" alt="Menú" />
+        </button>
+      </div>
+      <div class="top-bar-right">
+        <!-- Ícono de carrito -->
+        <button class="cart-btn">
+          <img src="img/shopping-bag.png" alt="Carrito" />
+        </button>
+      </div>
+
+      <!-- CAJA DE BÚSQUEDA con un ícono adicional (filtro) -->
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar por nombre o categoría" aria-label="Buscar" />
+        <button class="filter-btn">
+          <img src="img/search.png" alt="Filter" />
+        </button>
+      </div>
+    </header>
+
+    <!-- FILA DE CATEGORÍAS (ICONOS CIRCULARES) -->
+    <section class="categories-row">
+      <div class="category-circle active" data-category="todas">
+        <img src="img/home.png" alt="Todas" />
+      </div>
+      <div class="category-circle" data-category="decoracion">
+        <img src="img/armchair.png" alt="Decoración" />
+      </div>
+      <div class="category-circle" data-category="ropa">
+        <img src="img/dress.png" alt="Ropa" />
+      </div>
+      <div class="category-circle" data-category="juguetes">
+        <img src="img/toys.png" alt="Juguetes" />
+      </div>
+      <div class="category-circle" data-category="aseo">
+        <img src="img/personal-hygiene.png" alt="Útiles de Aseo" />
+      </div>
+      <div class="category-circle" data-category="personalizado">
+        <img src="img/profile.png" alt="Personalizado" />
+      </div>
+    </section>
+
+    <!-- MENSAJE DE RESULTADOS DE BÚSQUEDA -->
+    <div class="search-results" id="search-results" style="display: none;">
+      <p id="search-message"></p>
+    </div>
+
+    <!-- SECCIÓN DE PRODUCTOS (SCROLL VERTICAL) -->
+    <section class="products-section">
+      <!-- 1. Babero Rosado (Ropa) -->
+      <div class="product-card" data-name="Babero Rosado" data-category="ropa" data-price="9.99">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://www.babymodas.com/cdn/shop/products/BABEROPAJARITODIBUJO.jpg?v=1648073873" alt="Babero Rosado" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Babero Rosado</h3>
+            <p class="product-author">Ropa de Bebé</p>
+          </a>
+          <p class="product-price">S/ 9.99</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 2. Mameluco Bebé (Ropa) -->
+      <div class="product-card" data-name="Mameluco Bebé" data-category="ropa" data-price="12">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://rimage.ripley.com.pe/home.ripley/Attachment/MKP/829/PMP00002845985/full_image-1.jpeg" alt="Mameluco Bebé" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Mameluco Bebé</h3>
+            <p class="product-author">Ropa de Bebé</p>
+          </a>
+          <p class="product-price">S/ 12.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 3. Kit de Aseo Bebé (Aseo) -->
+      <div class="product-card" data-name="Kit de Aseo Bebé" data-category="aseo" data-price="20">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://www.coccoylolo.com/cdn/shop/collections/KIT-DE_ASEO_ESTUCHE-4.jpg?v=1718810659&width=750" alt="Kit de Aseo Bebé" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Kit de Aseo Bebé</h3>
+            <p class="product-author">Baby Care</p>
+          </a>
+          <p class="product-price">S/ 20.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 4. Set de Biberones (Aseo) -->
+      <div class="product-card" data-name="Set Biberones" data-category="aseo" data-price="25">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://nua.pe/cdn/shop/files/UtensiliosdeAceroInoxidable-2023-10-01T175752.373.png?v=1696201460" alt="Set Biberones" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Set Biberones</h3>
+            <p class="product-author">Aseo</p>
+          </a>
+          <p class="product-price">S/ 25.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 5. Peluche Elefante (Juguetes) -->
+      <div class="product-card" data-name="Peluche Elefante" data-category="juguetes" data-price="35.90">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://www.sorprendelima.pe/cdn/shop/files/Elefantecelestealas_1_550x.png?v=1691074648" alt="Peluche Elefante" class="product-image"/>
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Peluche Elefante</h3>
+            <p class="product-author">Suave y tierno</p>
+          </a>
+          <p class="product-price">S/ 35.90</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 6. Mantita de Bebé (Ropa) -->
+      <div class="product-card" data-name="Mantita de Bebé" data-category="ropa" data-price="50">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://sydney.pe/wp-content/uploads/2023/09/G3-rosa-bb-2.jpg" alt="Mantita de Bebé" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Mantita de Bebé</h3>
+            <p class="product-author">Ropa de Bebé</p>
+          </a>
+          <p class="product-price">S/ 50.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 7. Centro de Mesa Floral (Decoración) -->
+      <div class="product-card" data-name="Centro de Mesa Floral" data-category="decoracion" data-price="60">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://karyflor.com/wp-content/uploads/centro-de-mesa-001-1.jpg" alt="Centro de Mesa Floral" class="product-image"/>
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Centro de Mesa Floral</h3>
+            <p class="product-author">Decoración</p>
+          </a>
+          <p class="product-price">S/ 60.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 8. Pack Ropita Bebé (Ropa) -->
+      <div class="product-card" data-name="Pack Ropita Bebé" data-category="ropa" data-price="70">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://www.tuttitienda.com/cdn/shop/products/1K448510_56a7f5a3-3854-4d9f-8935-a5291821ab5a.jpg?v=1647720964" alt="Pack Ropita Bebé" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Pack Ropita Bebé</h3>
+            <p class="product-author">Ropa de Bebé</p>
+          </a>
+          <p class="product-price">S/ 70.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 9. Body Personalizado (Personalizado) -->
+      <div class="product-card" data-name="Body Personalizado" data-category="personalizado" data-price="80">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://www.tenvinilo.pe/webp/t-shirts/large/body-bebe-las-bebidas-de-mi-familia-76749.webp" alt="Body Personalizado" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Body Personalizado</h3>
+            <p class="product-author">Estilo Único</p>
+          </a>
+          <p class="product-price">S/ 80.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+
+      <!-- 10. Móvil de Cuna (Juguetes) -->
+      <div class="product-card" data-name="Móvil de Cuna" data-category="juguetes" data-price="100">
+        <div class="product-display">
+          <a href="#" target="_blank">
+            <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/120075997_01/w=800,h=800,fit=pad" alt="Móvil de Cuna" class="product-image" />
+          </a>
+          <div class="heart-icon">
+            <img src="img/heart.png" alt="Like" />
+          </div>
+        </div>
+        <div class="product-details">
+          <a href="#" target="_blank">
+            <h3 class="product-title">Móvil de Cuna</h3>
+            <p class="product-author">Juguetes</p>
+          </a>
+          <p class="product-price">S/ 100.00</p>
+        </div>
+        <a class="buy-button" href="#" target="_blank">Comprar</a>
+      </div>
+    </section>
+
+    <!-- MENÚ DE NAVEGACIÓN INFERIOR -->
+    <nav class="bottom-nav">
+      <!-- BOTÓN HOME -->
+      <button class="nav-item" id="home-btn">
+        <img src="img/home.png" alt="Home" />
+      </button>
+
+      <button class="nav-item">
+        <img src="img/search.png" alt="Search" />
+      </button>
+
+      <!-- BOTÓN DE INFORMACIÓN (en la parte inferior) -->
+      <button class="nav-item" id="info-btn">
+        <img src="img/info.png" alt="Info" />
+      </button>
+
+      <button class="nav-item">
+        <img src="img/setting.png" alt="Settings" />
+      </button>
+    </nav>
+  </div>
+
+  <!-- SCRIPTS (AL FINAL DEL BODY) -->
+  <script>
+    // Al entrar a la página, mostrar el aviso (modal)
+    window.addEventListener('DOMContentLoaded', () => {
+      const infoModal = document.getElementById('info-modal');
+      infoModal.style.display = 'flex'; // 'flex' para centrar y permitir el fadeIn
+    });
+
+    // BOTÓN DE CERRAR EL MODAL
+    const closeModalBtn = document.getElementById('close-modal');
+    closeModalBtn.addEventListener('click', () => {
+      document.getElementById('info-modal').style.display = 'none';
+    });
+
+    // BOTÓN DE INFORMACIÓN (parte inferior) también muestra el modal
+    const infoBtnBottom = document.getElementById('info-btn');
+    infoBtnBottom.addEventListener('click', () => {
+      document.getElementById('info-modal').style.display = 'flex';
+    });
+
+    // BOTÓN HOME FUNCIONAL
+    const homeButton = document.getElementById('home-btn');
+    homeButton.addEventListener('click', () => {
+      window.location.href = 'index.html'; 
+    });
+
+    // PRODUCTOS y FILTRO
+    const allProducts = document.querySelectorAll('.product-card');
+    const categoryCircles = document.querySelectorAll('.category-circle');
+    const searchInput = document.querySelector('.search-bar input');
+    const searchResults = document.getElementById('search-results');
+    const searchMessage = document.getElementById('search-message');
+
+    // Al hacer click en cada categoría
+    categoryCircles.forEach(circle => {
+      circle.addEventListener('click', () => {
+        // Quitar estado "active" de todas
+        categoryCircles.forEach(c => c.classList.remove('active'));
+        // Asignar al clickeado
+        circle.classList.add('active');
+
+        const categorySelected = circle.dataset.category.toLowerCase();
+        
+        // Filtrar
+        allProducts.forEach(product => {
+          const productCategory = product.dataset.category.toLowerCase();
+          if (categorySelected === 'todas') {
+            // Mostrar todos
+            product.style.display = '';
+          } else {
+            product.style.display = (productCategory === categorySelected) ? '' : 'none';
+          }
+        });
+        // Al cambiar de categoría, limpiar la búsqueda
+        searchInput.value = '';
+        // Ocultar el mensaje de resultados si estuviera visible
+        searchResults.style.display = 'none';
+      });
+    });
+
+    // BÚSQUEDA
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      if (searchTerm.length === 0) {
+        // Si se borró todo, volvemos a mostrar la categoría activa
+        const activeCategory = document.querySelector('.category-circle.active');
+        const categorySelected = activeCategory.dataset.category;
+        allProducts.forEach(product => {
+          if (categorySelected === 'todas') {
+            product.style.display = '';
+          } else {
+            const productCat = product.dataset.category.toLowerCase();
+            product.style.display = (productCat === categorySelected) ? '' : 'none';
+          }
+        });
+        // Ocultar el mensaje de resultados
+        searchResults.style.display = 'none';
+        return;
+      }
+
+      // Si hay texto, filtramos por nombre o categoría (independiente de la categoría activa)
+      let count = 0;
+      allProducts.forEach(product => {
+        const name = product.dataset.name.toLowerCase();
+        const cat = product.dataset.category.toLowerCase();
+        if (name.includes(searchTerm) || cat.includes(searchTerm)) {
+          product.style.display = '';
+          count++;
+        } else {
+          product.style.display = 'none';
+        }
+      });
+      // Mostrar mensaje de resultados
+      searchResults.style.display = 'block';
+      searchMessage.textContent = `Se encontraron ${count} resultados para "${searchTerm}"`;
+    });
+  </script>
+</body>
+</html>
